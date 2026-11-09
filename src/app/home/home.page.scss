@@ -1,0 +1,54 @@
+.screen {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  touch-action: manipulation; // stops the browser from zooming on double tap
+}
+
+.dice {
+  width: 200px;
+  height: 200px;
+  padding: 20px;
+  background: white;
+  border: 4px solid #222;
+  border-radius: 28px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.dice.rolling {
+  animation: shake 0.15s infinite;
+}
+
+.cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dot {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #222;
+}
+
+.result {
+  margin-top: 32px;
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.hint {
+  color: gray;
+}
+
+@keyframes shake {
+  0% { transform: rotate(-6deg); }
+  50% { transform: rotate(6deg); }
+  100% { transform: rotate(-6deg); }
+}

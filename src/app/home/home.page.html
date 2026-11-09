@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Dice</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="screen" (click)="onTap()">
+    <div class="dice" [class.rolling]="rolling()">
+      @for (cell of cells; track cell) {
+        <div class="cell">
+          @if (hasDot(cell)) {
+            <span class="dot"></span>
+          }
+        </div>
+      }
+    </div>
+
+    <h1 class="result">{{ rolling() ? '...' : value() }}</h1>
+    <p class="hint">Double tap anywhere to roll</p>
+  </div>
+</ion-content>
